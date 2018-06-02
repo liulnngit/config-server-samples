@@ -1,6 +1,7 @@
 package com.liulnn.springcloud.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -19,7 +20,7 @@ public class AppConfig {
     Environment env; //环境 spring
 
     @Bean
-    //@RefreshScope
+    @RefreshScope
     public JedisPool jedisPool(){
         String host = env.getProperty("redis.host");
         int port = env.getProperty("redis.port",Integer.class);
