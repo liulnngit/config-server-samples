@@ -18,7 +18,7 @@ public class AppConfig {
 	Environment env; // 环境 spring
 
 	@Bean
-	//@RefreshScope
+	@RefreshScope
 	public JedisPool jedisPool() {
 		String host = env.getProperty("redis.host");
 		int port = env.getProperty("redis.port", Integer.class);

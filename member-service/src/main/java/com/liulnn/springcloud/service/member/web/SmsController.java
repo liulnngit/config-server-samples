@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.JedisPool;
 @RestController
 @RequestMapping("/sms")
-//@RefreshScope
+@RefreshScope
 public class SmsController {
 
 	// 注入
